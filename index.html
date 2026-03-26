@@ -21,6 +21,11 @@ body { font-family: Arial, sans-serif; }
   opacity: 1;
   transform: translateY(0);
 }
+/* image smooth fade */
+.p1, .p2, .p5 {
+transition: opacity 1.2s ease-in-out;
+}
+
 </style>
 
 </head>
@@ -72,11 +77,6 @@ body { font-family: Arial, sans-serif; }
 
 </nav>
 
-
-  </div>
-
-</nav>
-
 <!-- HERO SLIDER -->
 
 <section class="relative h-[90vh] overflow-hidden">
@@ -95,15 +95,16 @@ body { font-family: Arial, sans-serif; }
 
   <!-- overlay -->
 
-  <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
   <!-- content -->
 
   <div class="absolute inset-0 flex flex-col justify-center px-10 md:px-20 text-white max-w-3xl">
 
 
-<h1 class="text-5xl md:text-6xl font-semibold mb-4 leading-tight">
-  Leading Industrial <br> Packaging Solutions
+<h1 class="text-5xl md:text-6xl font-semibold mb-4 leading-tight tracking-tight">
+  Leading Industrial <br>
+  <span class="text-white/90">Packaging Solutions</span>
 </h1>
 
 <p class="mb-6 text-lg text-white/80">
@@ -111,15 +112,16 @@ body { font-family: Arial, sans-serif; }
 </p>
 
 <div class="flex gap-4">
-  <a href="#products" class="bg-white text-black px-6 py-3 rounded shadow">
+  <a href="#products"
+     class="bg-white text-black px-6 py-3 rounded-lg shadow hover:scale-105 transition">
     View Products
   </a>
 
-  <a href="#contact" class="border border-white px-6 py-3 rounded">
+  <a href="#contact"
+     class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
     Contact Us
   </a>
 </div>
-
 
   </div>
 
@@ -133,7 +135,7 @@ body { font-family: Arial, sans-serif; }
 
 </section>
 
-<section class="py-24 px-6 max-w-7xl mx-auto fade">
+<section id="about" class="py-24 px-6 max-w-7xl mx-auto fade">
 
   <!-- TITLE -->
 
@@ -157,135 +159,171 @@ body { font-family: Arial, sans-serif; }
 <!-- RIGHT TEXT -->
 <div>
 
-  <h3 class="text-xl font-semibold mb-3">Overview</h3>
-  <p class="text-gray-600 mb-6">
+  <h3 class="text-2xl font-semibold mb-4 text-[#103A57]">Overview</h3>
+  <p class="text-gray-600 mb-6 leading-relaxed">
     Sanpoly Sdn Bhd is a premier woven packaging manufacturer in Malaysia, 
     serving industries such as fertilizers, feedmills, palm oleochemicals, 
     and construction sectors.
   </p>
 
-  <h3 class="text-xl font-semibold mb-3">Company Philosophy</h3>
+  <h3 class="text-2xl font-semibold mb-4 text-[#103A57]">Company Philosophy</h3>
+
   <p class="text-gray-600 mb-4">
     Our core philosophy focuses on delivering complete customer packaging solutions 
     based on our 3P principle:
   </p>
 
-  <ul class="space-y-2 text-gray-700 mb-6">
-    <li>✔ <b>Protect</b> – Ensuring product safety</li>
-    <li>✔ <b>Position</b> – Strengthening brand presence</li>
-    <li>✔ <b>Performs</b> – Delivering efficiency and durability</li>
-  </ul>
+  <div class="space-y-3 mb-6">
 
-  <p class="text-gray-600">
+    <div class="flex items-start gap-3">
+      <div class="w-6 h-6 bg-[#103A57] text-white rounded-full flex items-center justify-center text-sm">✓</div>
+      <p><b>Protect</b> – Ensuring product safety</p>
+    </div>
+
+    <div class="flex items-start gap-3">
+      <div class="w-6 h-6 bg-[#103A57] text-white rounded-full flex items-center justify-center text-sm">✓</div>
+      <p><b>Position</b> – Strengthening brand presence</p>
+    </div>
+
+    <div class="flex items-start gap-3">
+      <div class="w-6 h-6 bg-[#103A57] text-white rounded-full flex items-center justify-center text-sm">✓</div>
+      <p><b>Performs</b> – Delivering efficiency and durability</p>
+    </div>
+
+  </div>
+
+  <p class="text-gray-600 leading-relaxed">
     Our team works together to bring this vision into reality, supporting a diverse 
     and growing global customer base.
   </p>
 
 </div>
 
-
   </div>
 
 </section>
 
+
 <!-- PRODUCTS -->
 
-<section id="products" class="py-24 px-6 max-w-7xl mx-auto fade">
+<section id="products" class="py-24 px-6 max-w-7xl mx-auto">
 
-  <h2 class="text-3xl font-semibold text-center mb-16">Our Products</h2>
+  <h2 class="text-3xl font-semibold text-center mb-20">Our Products</h2>
 
-  <div class="grid md:grid-cols-2 gap-10">
+  <div class="space-y-20">
 
+<!-- 1 PP Circular (4 images) -->
+<div class="grid md:grid-cols-2 gap-12 items-center py-12">
+  <div class="relative h-72 overflow-hidden rounded-xl shadow-lg">
+    <img src="p1-1.jpg" class="p1 absolute w-full h-full object-cover">
+    <img src="p1-2.jpg" class="p1 absolute w-full h-full object-cover opacity-0">
+    <img src="p1-3.jpg" class="p1 absolute w-full h-full object-cover opacity-0">
+    <img src="p1-4.jpg" class="p1 absolute w-full h-full object-cover opacity-0">
+  </div>
 
-<!-- 1 -->
-<div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
-  <h3 class="text-lg font-semibold mb-2">
-    PP Circular Woven Bags
-  </h3>
-  <p class="text-sm text-gray-500 mb-4">
-    Laminated & Non-Laminated
-  </p>
+  <div>
+    <h3 class="text-2xl font-semibold text-[#103A57] mb-3">PP Circular Woven Bags</h3>
+    <p class="text-gray-500 mb-4">Laminated & Non-Laminated</p>
 
-  <ul class="text-sm text-gray-600 space-y-1">
-    <li><b>Color:</b> White, Transparent, Purple, Blue-White, Green, Beige</li>
-    <li><b>Size:</b> Width: 17"–29" / Length: 24"–50"</li>
-    <li><b>Printing:</b> Maximum 8 colours</li>
-    <li><b>Lead Time:</b> 6–12 working days</li>
-    <li><b>Capacity:</b> 4,000,000 pcs/month</li>
-  </ul>
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <p><b>Color:</b> White, Transparent, Purple, Blue-White, Green, Beige</p>
+      <p><b>Size:</b> 17"–29" / 24"–50"</p>
+      <p><b>Printing:</b> Maximum 8 colours</p>
+      <p><b>Lead Time:</b> 6–12 days</p>
+      <p><b>Capacity:</b> 4,000,000 pcs/month</p>
+    </div>
+  </div>
 </div>
 
-<!-- 2 -->
-<div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
-  <h3 class="text-lg font-semibold mb-4">
-    BOPP Laminated PP Woven Bags
-  </h3>
+<!-- 2 BOPP (5 images) -->
+<div class="grid md:grid-cols-2 gap-12 items-center py-12 bg-[#F5F9FC] px-6 rounded-xl">
+  <div class="relative h-72 overflow-hidden rounded-xl shadow-lg">
+    <img src="p2-1.jpg" class="p2 absolute w-full h-full object-cover">
+    <img src="p2-2.jpg" class="p2 absolute w-full h-full object-cover opacity-0">
+    <img src="p2-3.jpg" class="p2 absolute w-full h-full object-cover opacity-0">
+    <img src="p2-4.jpg" class="p2 absolute w-full h-full object-cover opacity-0">
+    <img src="p2-5.jpg" class="p2 absolute w-full h-full object-cover opacity-0">
+  </div>
 
-  <ul class="text-sm text-gray-600 space-y-1">
-    <li><b>Color:</b> Many</li>
-    <li><b>Size:</b> Custom</li>
-    <li><b>Printing:</b> Gravure printing</li>
-    <li><b>Lead Time:</b> 3–4 weeks</li>
-    <li><b>Capacity:</b> 2,000,000 pcs/month</li>
-  </ul>
+  <div>
+    <h3 class="text-2xl font-semibold text-[#103A57] mb-4">BOPP Laminated PP Woven Bags</h3>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <p><b>Color:</b> Many</p>
+      <p><b>Size:</b> Custom</p>
+      <p><b>Printing:</b> Gravure printing</p>
+      <p><b>Lead Time:</b> 3–4 weeks</p>
+      <p><b>Capacity:</b> 2,000,000 pcs/month</p>
+    </div>
+  </div>
 </div>
 
-<!-- 3 -->
-<div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
-  <h3 class="text-lg font-semibold mb-4">
-    Kraft Paper Laminated PP Woven Bags
-  </h3>
+<!-- 3 Kraft -->
+<div class="grid md:grid-cols-2 gap-12 items-center py-12">
+  <img src="p3-1.jpg" class="rounded-xl shadow-lg w-full h-72 object-cover">
 
-  <ul class="text-sm text-gray-600 space-y-1">
-    <li><b>Color:</b> Brown Kraft, White Kraft</li>
-    <li><b>Size:</b> Custom</li>
-    <li><b>Printing:</b> Gravure / Flexo printing</li>
-    <li><b>Lead Time:</b> 2–4 weeks</li>
-    <li><b>Capacity:</b> 2,500,000 pcs/month</li>
-  </ul>
+  <div>
+    <h3 class="text-2xl font-semibold text-[#103A57] mb-4">Kraft Paper Laminated PP Woven Bags</h3>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <p><b>Color:</b> Brown Kraft, White Kraft</p>
+      <p><b>Size:</b> Custom</p>
+      <p><b>Printing:</b> Gravure / Flexo</p>
+      <p><b>Lead Time:</b> 2–4 weeks</p>
+      <p><b>Capacity:</b> 2,500,000 pcs/month</p>
+    </div>
+  </div>
 </div>
 
-<!-- 4 -->
-<div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
-  <h3 class="text-lg font-semibold mb-4">
-    PP Woven Rolls
-  </h3>
+<!-- 4 Rolls -->
+<div class="grid md:grid-cols-2 gap-12 items-center py-12 bg-[#F5F9FC] px-6 rounded-xl">
+  <img src="p4-1.jpg" class="rounded-xl shadow-lg w-full h-72 object-cover">
 
-  <ul class="text-sm text-gray-600 space-y-1">
-    <li><b>Color:</b> White, Transparent, Purple, Blue-White, Green, Beige</li>
-    <li><b>Size (Width):</b> 17", 19", 20", 21", 23", 25", 26", 28", 29"</li>
-    <li><b>Construction:</b> Custom</li>
-  </ul>
+  <div>
+    <h3 class="text-2xl font-semibold text-[#103A57] mb-4">PP Woven Rolls</h3>
+
+    <div class="text-sm text-gray-700 space-y-2">
+      <p><b>Color:</b> White, Transparent, Purple, Blue-White, Green, Beige</p>
+      <p><b>Size:</b> 17", 19", 20", 21", 23", 25", 26", 28", 29"</p>
+      <p><b>Construction:</b> Custom</p>
+    </div>
+  </div>
 </div>
 
-<!-- 5 -->
-<div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
-  <h3 class="text-lg font-semibold mb-4">
-    FIBC / Bulk Bags (Sling Bags)
-  </h3>
+<!-- 5 FIBC (2 images) -->
+<div class="grid md:grid-cols-2 gap-12 items-center py-12">
+  <div class="relative h-72 overflow-hidden rounded-xl shadow-lg">
+    <img src="p5-1.jpg" class="p5 absolute w-full h-full object-cover">
+    <img src="p5-2.jpg" class="p5 absolute w-full h-full object-cover opacity-0">
+  </div>
 
-  <ul class="text-sm text-gray-600 space-y-1">
-    <li><b>Color:</b> Custom</li>
-    <li><b>Size:</b> Custom</li>
-    <li><b>Printing:</b> Custom</li>
-    <li><b>Lead Time:</b> 3–4 weeks</li>
-    <li><b>Capacity:</b> 100,000 pcs/month</li>
-    <li><b>Note:</b> New & Used Bags</li>
-  </ul>
+  <div>
+    <h3 class="text-2xl font-semibold text-[#103A57] mb-4">FIBC / Bulk Bags (Sling Bags)</h3>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <p><b>Color:</b> Custom</p>
+      <p><b>Size:</b> Custom</p>
+      <p><b>Printing:</b> Custom</p>
+      <p><b>Lead Time:</b> 3–4 weeks</p>
+      <p><b>Capacity:</b> 100,000 pcs/month</p>
+    </div>
+  </div>
 </div>
 
-<!-- 6 -->
-<div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
-  <h3 class="text-lg font-semibold mb-4">
-    PP Woven Sheet
-  </h3>
+<!-- 6 Sheet -->
+<div class="grid md:grid-cols-2 gap-12 items-center py-12 bg-[#F5F9FC] px-6 rounded-xl">
+  <img src="p6-1.jpg" class="rounded-xl shadow-lg w-full h-72 object-cover">
 
-  <ul class="text-sm text-gray-600 space-y-1">
-    <li><b>Color:</b> White, Transparent, Custom</li>
-    <li><b>Size:</b> Custom</li>
-    <li><b>Printing:</b> Custom</li>
-    <li><b>Lead Time:</b> 3–4 weeks</li>
-  </ul>
+  <div>
+    <h3 class="text-2xl font-semibold text-[#103A57] mb-4">PP Woven Sheet</h3>
+
+    <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+      <p><b>Color:</b> White, Transparent, Custom</p>
+      <p><b>Size:</b> Custom</p>
+      <p><b>Printing:</b> Custom</p>
+      <p><b>Lead Time:</b> 3–4 weeks</p>
+    </div>
+  </div>
 </div>
 
   </div>
@@ -298,7 +336,6 @@ body { font-family: Arial, sans-serif; }
 
   <div class="max-w-7xl mx-auto">
 
-```
 <!-- TITLE -->
 <div class="text-center mb-16">
   <p class="text-sm tracking-widest text-gray-500 mb-2">GET IN TOUCH</p>
@@ -433,6 +470,25 @@ function copyPhone(number, element) {
 <script>
 // slider
 let current = 0;
+function autoSlide(cls) {
+let index = 0;
+const slides = document.querySelectorAll("." + cls);
+
+if (slides.length <= 1) return;
+
+setInterval(() => {
+slides.forEach((img, i) => {
+img.style.opacity = i === index ? "1" : "0";
+});
+index = (index + 1) % slides.length;
+}, 2000);
+}
+
+// run sliders
+autoSlide("p1");
+autoSlide("p2");
+autoSlide("p5");
+
 const slides = document.getElementById("slides");
 const total = slides.children.length;
 const dotsContainer = document.getElementById("dots");
