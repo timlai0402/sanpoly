@@ -202,10 +202,22 @@ transition: opacity 1.2s ease-in-out;
 
   <!-- VIDEO -->
   <div class="mb-16 rounded-2xl overflow-hidden shadow-xl">
-    <video autoplay muted loop playsinline class="w-full h-[400px] object-cover">
-      <source src="video.mp4" type="video/mp4">
-    </video>
-  </div>
+
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="auto"
+    class="w-full h-[400px] object-cover">
+
+    <source src="./video.mp4" type="video/mp4">
+
+    Your browser does not support the video tag.
+
+  </video>
+
+</div>
 
   <!-- OVERVIEW -->
   <div class="bg-white p-10 md:p-12 rounded-2xl shadow-md mb-10">
