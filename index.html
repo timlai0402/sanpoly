@@ -48,44 +48,60 @@ transition: opacity 1.2s ease-in-out;
 
 <!-- NAVBAR -->
 
+<!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-[999] bg-white/90 backdrop-blur-md border-b border-gray-200">
 
-  <div class="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
+    <!-- LOGO -->
+    <div class="flex items-center gap-2">
+      <img src="logo.png" class="h-8 md:h-10">
 
-<!-- LOGO -->
-<div class="flex items-center gap-3">
-  <img src="logo.png" class="h-10">
-  <span class="font-semibold text-[#103A57] text-lg tracking-tight">
-    SANPOLY INDUSTRY SDN BHD
-  </span>
-</div>
+      <span class="font-semibold text-[#103A57] leading-tight">
+        <span class="text-sm md:hidden">SANPOLY</span>
+        <span class="hidden md:inline text-lg">
+          SANPOLY INDUSTRY SDN BHD
+        </span>
+      </span>
+    </div>
 
-<!-- MENU -->
-<div class="flex items-center gap-10 text-sm text-[#1f2937]">
+    <!-- DESKTOP MENU -->
+    <div class="hidden md:flex items-center gap-10 text-sm text-gray-700">
 
-  <a href="#" class="hover:text-[#103A57] transition">Home</a>
+      <a href="#" class="hover:text-[#103A57]">Home</a>
+      <a href="#about" class="hover:text-[#103A57]">About</a>
+      <a href="#products" class="hover:text-[#103A57]">Products</a>
+      <a href="#contact" class="hover:text-[#103A57]">Contact</a>
 
-  <a href="#about" class="hover:text-[#103A57] transition">
-    About
-  </a>
+    </div>
 
-  <a href="#products" class="hover:text-[#103A57] transition">
-    Products
-  </a>
+    <!-- CTA (Desktop only) -->
+    <a href="#contact"
+       class="hidden md:block bg-[#103A57] text-white px-5 py-2 rounded-full text-sm hover:bg-[#0d2e46]">
+      Get Quote
+    </a>
 
-  <a href="#contact" class="hover:text-[#103A57] transition">
-    Contact
-  </a>
+    <!-- MOBILE BUTTON -->
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">
+      ☰
+    </button>
 
-</div>
+  </div>
 
-<!-- CTA -->
-<a href="#contact"
-   class="bg-[#103A57] text-white px-5 py-2 rounded-full text-sm hover:bg-[#0d2e46] transition shadow-sm">
-  Get Quote
-</a>
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+       class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-6 space-y-4 text-gray-700">
 
+    <a href="#" onclick="closeMenu()" class="block">Home</a>
+    <a href="#about" onclick="closeMenu()" class="block">About</a>
+    <a href="#products" onclick="closeMenu()" class="block">Products</a>
+    <a href="#contact" onclick="closeMenu()" class="block">Contact</a>
+
+    <a href="#contact"
+       onclick="closeMenu()"
+       class="block bg-[#103A57] text-white text-center py-3 rounded-lg mt-4">
+      Get Quote
+    </a>
 
   </div>
 
@@ -931,6 +947,16 @@ class="absolute right-2 top-1/2 -translate-y-1/2 bg-white px-3 py-1 rounded shad
   </div>
 
 </div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.add("hidden");
+}
+</script>
 
 <script>
 let currentImages = [];
